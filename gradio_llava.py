@@ -1,6 +1,8 @@
+import os
+os.system('pip install git+https://github.com/haotian-liu/LLaVA.git@4e2277a060da264c4f21b364c867cc622c945874')
+
 import gradio as gr
 from lmdeploy import pipeline
-
 
 pipe = pipeline('liuhaotian/llava-v1.6-vicuna-7b') #非开发机运行此命令
 #pipe = pipeline('/share/new_models/liuhaotian/llava-v1.6-vicuna-7b')
