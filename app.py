@@ -10,4 +10,5 @@ os.system(f'cd {base_path} && git lfs pull')
 
 backend_config = TurbomindEngineConfig(max_batch_size=8)
 model_path = base_path
-run_local(model_path, backend_config=backend_config, server_name="huggingface-space")
+model_name = 'internlm2lianghua'
+run_local(model_path, model_name, backend_config=backend_config, server_name="huggingface-space")
