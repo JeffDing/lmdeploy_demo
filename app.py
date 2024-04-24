@@ -9,7 +9,8 @@ base_path = './internlm2lianghua'
 os.system(f'git clone https://code.openxlab.org.cn/JeffDing/internlm2lianghua.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
 
-pipe = pipeline(base_path,backend_config=backend_config)
+model_name = 'internlm2-1.8b'
+pipe = pipeline(base_path,model_name, backend_config=backend_config)
 gen_config = GenerationConfig(top_p=0.8,top_k=40,temperature=0.8,max_new_tokens=1024)
 
 def chat(message,history):
