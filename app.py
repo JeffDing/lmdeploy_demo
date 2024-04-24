@@ -9,7 +9,7 @@ base_path = './internlm2-chat-1.8b'
 os.system(f'git clone https://code.openxlab.org.cn/OpenLMLab/internlm2-chat-1.8b.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
 
-model_name = 'internlm2-1.8b'
+model_name = 'internlm2-chat-1_8b'
 pipe = pipeline(base_path,model_name, backend_config=backend_config)
 gen_config = GenerationConfig(top_p=0.8,top_k=40,temperature=0.8,max_new_tokens=1024)
 
