@@ -14,7 +14,7 @@ gen_config = GenerationConfig(top_p=0.8,top_k=40,temperature=0.8,max_new_tokens=
 
 def chat(message,history):
   response = pipe(message, gen_config = gen_config)
-return response.text
+  return response.text
 
 demo = gr.ChatInterface(
   fn = chat,
