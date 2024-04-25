@@ -5,11 +5,11 @@ from lmdeploy import pipeline, TurbomindEngineConfig,GenerationConfig
 backend_config = TurbomindEngineConfig(cache_max_entry_count=0.01,model_format="awq")
 
 # download internlm2 to the base_path directory using git tool
-base_path = './internlm2-chat-1_8b'
-os.system(f'git clone https://code.openxlab.org.cn/OpenLMLab/internlm2-chat-1.8b.git {base_path}')
+base_path = './internlm2lianghua'
+os.system(f'git clone https://code.openxlab.org.cn/JeffDing/internlm2lianghua.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
 
-model_name = 'internlm2-chat-1_8b'
+model_name = 'internlm2lianghua'
 pipe = pipeline(base_path,model_name, backend_config=backend_config)
 gen_config = GenerationConfig(top_p=0.8,top_k=40,temperature=0.8,max_new_tokens=1024)
 
