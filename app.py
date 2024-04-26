@@ -19,24 +19,7 @@ def chat(message,history):
 
 demo = gr.ChatInterface(
   fn = chat,
-  title="InternLM2-Chat-1.8_4bit-self-cognition",
+  title="InternLM2-Chat Demo",
   description="""InternLM is mainly developed by Shanghai AI Laboratory. """,
 )
 demo.queue(1).launch()
-
-
-'''
-import torch
-import os
-from lmdeploy.serve.gradio.turbomind_coupled import run_local
-from lmdeploy.messages import TurbomindEngineConfig
-
-base_path = 
-# download repo to the base_path directory using git
-
-
-backend_config = TurbomindEngineConfig(max_batch_size=8)
-model_path = base_path
-model_name = 'internlm2lianghua'
-run_local(model_path, model_name, backend_config=backend_config, server_name="huggingface-space",max_threads=1)
-'''
