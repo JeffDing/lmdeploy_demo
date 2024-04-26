@@ -2,7 +2,7 @@ import os
 import gradio as gr
 from lmdeploy import pipeline, TurbomindEngineConfig,GenerationConfig
 
-backend_config = TurbomindEngineConfig(cache_max_entry_count=0.01,model_format="awq")
+backend_config = TurbomindEngineConfig(cache_max_entry_count=1,model_format="awq")
 
 # download internlm2 to the base_path directory using git tool
 base_path = './internlmlianghua'
@@ -22,4 +22,4 @@ demo = gr.ChatInterface(
   title="InternLM2-Chat Demo",
   description="""InternLM is mainly developed by Shanghai AI Laboratory. """,
 )
-demo.queue(1).launch()
+demo.queue().launch()
